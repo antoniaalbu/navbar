@@ -1,0 +1,199 @@
+/* Resetare stiluri implicite */
+body, ul, li, a, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stiluri de bază pentru corpul paginii */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Enables Flexbox on body */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    background-image: url('images/background.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    position: absolute;       /* Allows precise positioning */
+    top: 5%;                 /* Move the navbar down by 20% from the top */
+}
+
+/* Optional: Add a shadow for better visual appeal */
+.navbar {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.nav-container {
+    width: 80%;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+/* Elemente ale meniului */
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 40px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: #000000;
+    color: white;
+    border-radius: 40px;
+}
+
+/* Dropdown de nivel 2 */
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #000000;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1;
+    padding: 0; /* Remove padding */
+    list-style: none;
+    border-radius: 20px;
+}
+
+.dropdown li {
+    margin: 20px 0; /* Add vertical spacing between dropdown items */
+}
+
+.dropdown .dropdown-link {
+    padding: 10px 20px; /* Adjusted padding */
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for dropdown links */
+.dropdown .dropdown-link:hover {
+    background: #ffffff; /* Change background color on hover */
+    color: #000000; /* Optional: keep text color black */
+}
+
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #000000;
+    min-width: 200px;
+    border-radius: 10px;
+}
+
+/* Hover pentru afișarea submeniurilor */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown li:hover .dropdown-submenu {
+    display: block;
+}
+
+/* Hamburger menu stilizat */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: rgb(0, 0, 0);
+    color: #000000;
+    transition: 0.4s;
+}
+
+/* Stiluri responsive pentru dispozitive mici */
+@media (max-width: 768px) {
+    body {
+        background-image: url('images/background2.jpg'); /* Background for smaller screens */
+        background-size: cover; /* Make sure the image covers the screen */
+        background-position: center;
+        background-repeat: no-repeat; /* Prevent tiling */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        background: #000000;
+        color: white;
+        position: fixed;
+        top: 12%;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transition: left 0.3s ease;
+        border-radius: 10px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        color: white; /* Text color for nav links in mobile view */
+        padding: 15px 20px; /* Optional: adjust padding for mobile view */
+    }
+
+    .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .dropdown-submenu {
+        position: relative;
+        left: 10%;
+        top: 0;
+    }
+
+    .dropdown .dropdown-link {
+        color: white; /* Text color for dropdown links in mobile view */
+        margin: 10px 0; /* Maintain spacing for dropdown links */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle .bar {
+        background: rgb(0, 0, 0); /* Color for the hamburger menu bars */
+    }
+}

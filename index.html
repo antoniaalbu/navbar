@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Nav Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Nav Link 2</a>
+                    <ul class="dropdown">
+                        <li><a href="#" class="dropdown-link">Nav Second Child</a></li>
+                        <li>
+                            <a href="#" class="dropdown-link">Nav Second Child</a>
+                            <ul class="dropdown-submenu">
+                                <li><a href="#" class="dropdown-link">Nav Third Child</a></li>
+                                <li><a href="#" class="dropdown-link">Nav Third Child</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="dropdown-link">Nav Second Child</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Nav Link 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
